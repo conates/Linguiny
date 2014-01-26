@@ -1,0 +1,17 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+	{% block cabecera %}{% endblock %}
+</head>
+<body>
+	{# {% include "menu.html" %} #}
+	
+	{% block content %}
+	{% endblock %}
+
+
+</body>
+</html>
