@@ -8,3 +8,4 @@ class SearchForm(forms.Form):
 		super(SearchForm, self).__init__(*args, **kwargs)
 		self.fields['translate_from'].widget.attrs['class'] = 'form-control'
 		self.fields['translate_to'].widget.attrs['class'] = 'form-control'
+		

@@ -16,19 +16,20 @@ def home(request):
 
 
 def results(request):
+	form = SearchForm()
 	translate_from = request.POST.get('translate_from')
 	translate_to = request.POST.get('translate_to')
 	results = Profile.objects.filter(translate_from=translate_from,translate_to=translate_to)
 
 
 
-	return render(request, 'results.html',{'results':results,'translate_from':translate_from,'translate_to':translate_to})
+	return render(request, 'results.html',{'results':results,'translate_from':translate_from,'translate_to':translate_to,'form': form})
 
 
 
 
 def profile(request, profile_id):
-
+	form = SearchForm()
 	profile = get_object_or_404(Profile, pk=profile_id)
 
-	return render(request, 'profile.html',{'profile':profile})
+	return render(request, 'profile.html',{'profile':profile,'form': form})

@@ -2,7 +2,12 @@
 {% load staticfiles %}
 
 
+{% block head_text %} Perfil {% endblock %}
+
 {% block content %}
-    <h1>Perfil</h1>
-    	{{ profile.user.username }}
+	
+	<div class="row clearfix">	
+		{{ profile.user.username }}
+	</div>
 {% endblock %}
+

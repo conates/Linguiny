@@ -26,10 +26,48 @@
 </head>
 <body>
 	{% include "menu.html" %} 
+
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<div class="page-header">
+					<h1>
+						{% block head_text %} {% endblock %}
+					</h1>
+				</div>
+				
+				<form action="{% url 'results' %}" method="post" role="form" class="form-inline">
+					{% csrf_token %}
+
+					{% if form.errors %}
+						<p style="color: red;">
+							Please correct the error{{ form.errors|pluralize }} below.
+						</p>
+					{% endif %}
+					<div class="form-group">
+						 <label for="exampleInputEmail1">Translate From</label>
+						 {{ form.translate_from }}
+					</div>
+					<div class="form-group">
+						 <label for="exampleInputPassword1">Translate To</label>
+						 {{ form.translate_to }}
+					</div>
+					
+					<button type="submit" class="btn btn-default">Search</button>
+				</form>
+			</div>
+		</div>
+
 	
-	{% block content %}
-	{% endblock %}
+		{% block content %}{% endblock %}
+	
 
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				 <address> <strong>Twitter, Inc.</strong><br> 795 Folsom Ave, Suite 600<br> San Francisco, CA 94107<br> <abbr title="Phone">P:</abbr> (123) 456-7890</address>
+			</div>
+		</div>
 
+	</div>
 </body>
 </html>
