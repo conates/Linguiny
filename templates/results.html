@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block head_text %} Resultados <small>Búsqueda</small>{% endblock %}
+{% block content %}
+	
+	<div class="row clearfix">	
+		<ul>
+			{% for result in results %}
+				<li>  <a href='{% url "profile"  result.id %}' title="{{ result.user.username }}">{{ result.user.username }}</a> : {{ result.translate_from }} ->  {{ result.translate_to }}</li>
+			{% endfor%}
+		</ul>
+	</div>
+{% endblock %}

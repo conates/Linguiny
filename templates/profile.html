@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block head_text %} Perfil {% endblock %}
+
+{% block content %}
+	
+	<div class="row clearfix">	
+		{{ profile.user.username }}
+	</div>
+{% endblock %}
+
